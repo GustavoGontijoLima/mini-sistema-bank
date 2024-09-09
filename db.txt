@@ -1,0 +1,2 @@
+{"nome": "Gustavo", "cpf": "admin", "data_nascimento": "2004-11-30", "senha": "admin", "saldo": 0}
+{"nome": "Gustavooo", "cpf": "12345678910", "data_nascimento": "2024-09-05", "senha": "123", "saldo": 0}

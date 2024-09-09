@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Dados do BGL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>Banco de Dados do BGL</h1>
+        <pre id="fileContent"></pre>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('db.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar o arquivo');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('fileContent').textContent = data;
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                document.getElementById('fileContent').textContent = 'Não foi possível carregar o conteúdo do arquivo.';
+            });
+});
+    </script>
+</body>
+</html>

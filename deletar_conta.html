@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar Conta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Deletar Conta</h1>
+    <button id="deletar-conta">Deletar Conta</button>
+
+    <script>
+        document.getElementById('deletar-conta').addEventListener('click', function() {
+            fetch('/deletar_conta', {
+                method: 'POST'
+            })
+            .then(response => response.text())
+            .then(result => {
+                alert(result);
+                window.location.href = '/';
+            })
+            .catch(error => alert('Erro ao deletar conta'));
+        });
+    </script>
+</body>
+</html>
